@@ -1,0 +1,12 @@
+{
+  "name": "mineouse-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend de Mineouse: crea pagos en Mercado Pago y envía emails con Resend",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mercadopago": "^2.9.0"
+  }
+}
