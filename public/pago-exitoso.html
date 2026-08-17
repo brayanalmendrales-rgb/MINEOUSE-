@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pago recibido — Mineouse</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600&display=swap" />
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: #17151F; color: #EDEAE3; font-family: 'Inter', sans-serif; padding: 24px;
+  }
+  .card { max-width: 420px; text-align: center; }
+  .badge {
+    width: 64px; height: 64px; border-radius: 999px; background: #6FCF52; color: #111;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 28px;
+  }
+  h1 { font-family: 'Press Start 2P', monospace; font-size: 18px; line-height: 1.6; margin: 0 0 16px; }
+  p { color: rgba(237,234,227,0.7); line-height: 1.6; margin: 0 0 8px; font-size: 14px; }
+  .order { font-family: monospace; color: #EDEAE3; }
+  .note {
+    margin-top: 24px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+    font-size: 12px; color: rgba(237,234,227,0.55); text-align: left;
+  }
+  a.btn {
+    display: inline-block; margin-top: 28px; padding: 12px 24px; background: #6FCF52; color: #111;
+    text-decoration: none; border-radius: 6px; font-family: monospace; font-size: 12px; letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">✓</div>
+    <h1>¡Pago recibido!</h1>
+    <p>Tu pago fue recibido correctamente y tu pedido <span class="order" id="pedido"></span> ya está siendo procesado.</p>
+    <p>En cuanto Mercado Pago confirme el pago vas a recibir un email con el detalle de tu compra.</p>
+    <div class="note">
+      Si no te llega el email en unos minutos, revisá la carpeta de spam o escribinos por WhatsApp mencionando el número de pedido.
+    </div>
+    <a class="btn" href="/">VOLVER A LA TIENDA</a>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const pedido = params.get("pedido");
+    document.getElementById("pedido").textContent = pedido ? `#${pedido}` : "";
+  </script>
+</body>
+</html>
